@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "mintstate",
+	"version": "${version}",
+	"name": "Mint State Craft",
+	"description": "The Mod to turn the Economic Tides!",
+	"authors": [
+		"Irreleven"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/mintstate/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.irreleven.mintstate.MintStateCraft"
+		],
+		"client": [
+			"net.irreleven.mintstate.MintStateCraftClient"
+		],
+		"fabric-datagen": [
+			"net.irreleven.mintstate.MintStateCraftDataGenerator"
+		]
+	},
+	"mixins": [
+		"mintstate.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
