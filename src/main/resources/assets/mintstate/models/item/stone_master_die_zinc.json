@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "mintstate:item/stone_master_die_zinc"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "item.mintstate.emerald_planchet": "Emerald Planchet",
+  "item.mintstate.diamond_planchet": "Diamond Planchet",
+  "item.mintstate.gold_planchet": "Gold Planchet",
+  "item.mintstate.copper_planchet": "Copper Planchet",
+  "item.mintstate.zinc_planchet": "Zinc Planchet",
+  "item.mintstate.nickel_planchet": "Nickel Planchet",
+  "item.mintstate.nickelgold_planchet": "Nickelgold Planchet",
+
+
+  "item.mintstate.diamond_master_die_diamond": "§3 Diamond Master Die (D)",
+  "item.mintstate.diamond_master_die_copper": "§c Diamond Master Die (C)",
+  "item.mintstate.diamond_master_die_emerald": "§2 Diamond Master Die (E)",
+  "item.mintstate.diamond_master_die_gold": "§6 Diamond Master Die (G)",
+  "item.mintstate.diamond_master_die_nickel": "§f Diamond Master Die (N)",
+  "item.mintstate.diamond_master_die_nickelgold": "§7 Diamond Master Die (NG)",
+  "item.mintstate.diamond_master_die_zinc": "§a Diamond Master Die (Z)",
+
+  "item.mintstate.stone_master_die_diamond": "§3 Stone Master Die (D)",
+  "item.mintstate.stone_master_die_copper": "§c Stone Master Die (C)",
+  "item.mintstate.stone_master_die_emerald": "§2 Stone Master Die (E)",
+  "item.mintstate.stone_master_die_gold": "§6 Stone Master Die (G)",
+  "item.mintstate.stone_master_die_nickel": "§f Stone Master Die (N)",
+  "item.mintstate.stone_master_die_nickelgold": "§7 Stone Master Die (NG)",
+  "item.mintstate.stone_master_die_zinc": "§a Stone Master Die (Z)",
+
+  "item.mintstate.iron_master_die_diamond": "§3 Iron Master Die (D)",
+  "item.mintstate.iron_master_die_copper": "§c Iron Master Die (C)",
+  "item.mintstate.iron_master_die_emerald": "§2 Iron Master Die (E)",
+  "item.mintstate.iron_master_die_gold": "§6 Iron Master Die (G)",
+  "item.mintstate.iron_master_die_nickel": "§f Iron Master Die (N)",
+  "item.mintstate.iron_master_die_nickelgold": "§7 Iron Master Die (NG)",
+  "item.mintstate.iron_master_die_zinc": "§a Iron Master Die (Z)",
+
+  "item.mintstate.netherite_master_die_diamond": "§3 Netherite Master Die (D)",
+  "item.mintstate.netherite_master_die_copper": "§c Netherite Master Die (C)",
+  "item.mintstate.netherite_master_die_emerald": "§2 Netherite Master Die (E)",
+  "item.mintstate.netherite_master_die_gold": "§6 Netherite Master Die (G)",
+  "item.mintstate.netherite_master_die_nickel": "§f Netherite Master Die (N)",
+  "item.mintstate.netherite_master_die_nickelgold": "§7 Netherite Master Die (NG)",
+  "item.mintstate.netherite_master_die_zinc": "§a Netherite Master Die (Z)",
+
+  "itemgroup.mint_state_coins": "Mint State: Coins"
+}
