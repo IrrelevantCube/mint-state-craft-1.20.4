@@ -2,15 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "aan",
-    "aan",
+    "##n",
+    "##n",
     "nnn"
   ],
   "key": {
     "n": {
       "item": "minecraft:air"
     },
-    "a": {
+    "#": {
       "item": "mintstate:coin_amalgam"
     }
   },

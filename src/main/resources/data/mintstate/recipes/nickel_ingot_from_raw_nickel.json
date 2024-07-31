@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "ingredient": {
+    "item": "mintstate:raw_nickel"
+  },
+  "result": "mintstate:nickel_ingot",
+  "cookingtime": 600
+}

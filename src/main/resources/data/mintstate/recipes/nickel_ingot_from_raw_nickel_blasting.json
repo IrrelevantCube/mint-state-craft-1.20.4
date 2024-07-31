@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "ingredient": {
+    "item": "mintstate:raw_nickel"
+  },
+  "result": "mintstate:nickel_ingot",
+  "cookingtime": 450
+}
