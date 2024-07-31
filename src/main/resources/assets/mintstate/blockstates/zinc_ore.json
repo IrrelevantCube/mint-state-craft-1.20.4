@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "mintstate:block/zinc_ore"
+    }
+  }
+}

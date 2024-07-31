@@ -56,6 +56,15 @@ public class ModItems {
     public static final Item NETHERITE_MASTER_DIE_NICKELGOLD = registerItem ("netherite_master_die_nickelgold", new Item(new FabricItemSettings ()));
     public static final Item STONE_MASTER_DIE_NICKELGOLD = registerItem ("stone_master_die_nickelgold", new Item(new FabricItemSettings ()));
 
+
+    public static final Item COIN_AMALGAM = registerItem ("coin_amalgam", new Item (new FabricItemSettings ()));
+
+
+    public static final Item RAW_ZINC = registerItem ("raw_zinc", new Item(new FabricItemSettings ()));
+    public static final Item RAW_NICKEL = registerItem ("raw_nickel", new Item(new FabricItemSettings ()));
+    public static final Item ZINC_INGOT = registerItem ("zinc_ingot", new Item(new FabricItemSettings ()));
+    public static final Item NICKEL_INGOT = registerItem ("nickel_ingot", new Item(new FabricItemSettings ()));
+
     private static void addItemsToSearchTabItemGroup (FabricItemGroupEntries entries) {
         entries.add(EMERALD_PLANCHET);
         entries.add(DIAMOND_PLANCHET);
@@ -101,6 +110,16 @@ public class ModItems {
         entries.add(NETHERITE_MASTER_DIE_NICKELGOLD);
         entries.add(STONE_MASTER_DIE_NICKELGOLD);
 
+
+    }
+    private static void addItemsToIngredientsTabItemGroup(FabricItemGroupEntries entries) {
+
+        entries.add(ZINC_INGOT);
+        entries.add(RAW_ZINC);
+        entries.add(NICKEL_INGOT);
+        entries.add(RAW_NICKEL);
+        entries.add(COIN_AMALGAM);
+
     }
 
     private static Item registerItem(String name, Item item) {
@@ -111,5 +130,6 @@ public class ModItems {
         MintStateCraft.LOGGER.info ("Registering Mod Items For " + MintStateCraft.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent (ItemGroups.SEARCH).register (ModItems::addItemsToSearchTabItemGroup);
+        ItemGroupEvents.modifyEntriesEvent (ItemGroups.INGREDIENTS).register (ModItems::addItemsToIngredientsTabItemGroup);
     }
 }

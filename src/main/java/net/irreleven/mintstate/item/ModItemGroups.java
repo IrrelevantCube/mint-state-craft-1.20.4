@@ -2,6 +2,7 @@ package net.irreleven.mintstate.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.irreleven.mintstate.MintStateCraft;
+import net.irreleven.mintstate.block.ModBlocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
@@ -50,11 +51,29 @@ public class ModItemGroups {
         entries.add(ModItems.NETHERITE_MASTER_DIE_NICKEL);
         entries.add(ModItems.STONE_MASTER_DIE_NICKEL);
 
+        entries.add(ModItems.COIN_AMALGAM);
+
         entries.add(ModItems.DIAMOND_MASTER_DIE_NICKELGOLD);
         entries.add(ModItems.IRON_MASTER_DIE_NICKELGOLD);
         entries.add(ModItems.NETHERITE_MASTER_DIE_NICKELGOLD);
         entries.add(ModItems.STONE_MASTER_DIE_NICKELGOLD);
 
+
+
+
+
+
+    }).build ());
+    public static final ItemGroup MINT_STATE_NATURE = Registry.register (Registries.ITEM_GROUP, new Identifier (MintStateCraft.MOD_ID, "mint_state_nature"), FabricItemGroup.builder ().displayName (Text.translatable ("itemgroup.mint_state_nature")).icon (() -> new ItemStack (ModItems.RAW_NICKEL)).entries ((displayContext, entries) -> {
+        entries.add (ModItems.ZINC_INGOT);
+        entries.add (ModItems.RAW_ZINC);
+        entries.add (ModItems.NICKEL_INGOT);
+        entries.add (ModItems.RAW_NICKEL);
+
+        entries.add (ModBlocks.DEEPSLATE_NICKEL_ORE);
+        entries.add (ModBlocks.DEEPSLATE_ZINC_ORE);
+        entries.add (ModBlocks.ZINC_ORE);
+        entries.add (ModBlocks.NICKEL_ORE);
 
     }).build ());
 

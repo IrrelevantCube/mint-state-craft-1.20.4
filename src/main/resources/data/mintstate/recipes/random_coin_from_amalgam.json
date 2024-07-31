@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aan",
+    "aan",
+    "nnn"
+  ],
+  "key": {
+    "n": {
+      "item": "minecraft:air"
+    },
+    "a": {
+      "item": "mintstate:coin_amalgam"
+    }
+  },
+  "result": {
+    "item": "mintstate:emerald_planchet",
+    "count": 1
+  }
+}
