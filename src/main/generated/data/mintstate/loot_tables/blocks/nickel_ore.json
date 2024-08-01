@@ -11,7 +11,7 @@
               "type": "minecraft:item",
               "conditions": [
                 {
-                  "condition": "match_tool",
+                  "condition": "minecraft:match_tool",
                   "predicate": {
                     "enchantments": [
                       {
@@ -24,18 +24,19 @@
                   }
                 }
               ],
-              "name": "mintstate:raw_zinc"
+              "name": "mintstate:nickel_ore"
             },
             {
               "type": "minecraft:item",
-              "weight": 1000,
               "functions": [
                 {
-                  "function": "minecraft:set_count",
+                  "add": false,
                   "count": {
-                    "min": 1,
-                    "max": 3
-                  }
+                    "type": "minecraft:uniform",
+                    "max": 5.0,
+                    "min": 2.0
+                  },
+                  "function": "minecraft:set_count"
                 },
                 {
                   "enchantment": "minecraft:fortune",
@@ -46,28 +47,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "mintstate:raw_zinc"
-            },
-            {
-              "type": "minecraft:item",
-              "name": "mintstate:raw_zinc",
-              "weight": 1,
-              "functions": [
-                {
-                  "function": "minecraft:set_count",
-                  "count": 10,
-                  "add": true
-                },
-                {
-                  "enchantment": "minecraft:fortune",
-                  "formula": "minecraft:ore_drops",
-                  "function": "minecraft:apply_bonus"
-                },
-                {
-                  "function": "minecraft:explosion_decay"
-                }
-              ],
-              "name": "mintstate:raw_zinc"
+              "name": "mintstate:raw_nickel"
             }
           ]
         }
@@ -76,4 +56,3 @@
     }
   ]
 }
-

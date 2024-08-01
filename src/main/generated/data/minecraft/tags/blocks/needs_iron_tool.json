@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "mintstate:deepslate_nickel_ore",
+    "mintstate:nickel_ore",
+    "mintstate:deepslate_zinc_ore",
+    "mintstate:zinc_ore"
+  ]
+}

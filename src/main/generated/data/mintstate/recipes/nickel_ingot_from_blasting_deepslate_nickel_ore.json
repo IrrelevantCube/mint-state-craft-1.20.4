@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 450,
+  "experience": 0.05,
+  "group": "nickel",
+  "ingredient": {
+    "item": "mintstate:deepslate_nickel_ore"
+  },
+  "result": "mintstate:nickel_ingot"
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 800,
+  "experience": 0.08,
+  "group": "zinc",
+  "ingredient": {
+    "item": "mintstate:raw_zinc"
+  },
+  "result": "mintstate:zinc_ingot"
+}

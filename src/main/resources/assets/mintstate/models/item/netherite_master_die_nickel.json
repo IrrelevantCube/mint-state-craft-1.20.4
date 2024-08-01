@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "mintstate:item/netherite_master_die_nickel"
-  }
-}

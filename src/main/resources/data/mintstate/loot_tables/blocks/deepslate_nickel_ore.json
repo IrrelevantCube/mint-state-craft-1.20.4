@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "ndt:raw_nickel",
+          "name": "mintstate:raw_nickel",
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -31,7 +31,8 @@
             }
           ]
         }
-      ]
+      ],
+      "rolls": 1.0
     }
   ]
 }

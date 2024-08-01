@@ -33,55 +33,54 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerBlasting (exporter, ZINC_SMELTABLES, RecipeCategory.MISC, ModItems.ZINC_INGOT,
                 0.08f, 800, "zinc");
 
-        offer2x2CompactingRecipe (exporter, RecipeCategory.MISC, ModItems.COIN_AMALGAM,  ModItems.DIAMOND_MASTER_DIE_EMERALD);
+        offer2x2CompactingRecipe (exporter, RecipeCategory.MISC, ModItems.EMERALD_PLANCHET,  ModItems.COIN_AMALGAM);
 
         ShapedRecipeJsonBuilder.create (RecipeCategory.MISC, ModItems.DIAMOND_PLANCHET, 1)
-                .pattern ("#C#")
+                .pattern (" C ")
                 .pattern ("CDC")
-                .pattern ("#C#")
+                .pattern (" C ")
                 .input ('C', ModItems.COIN_AMALGAM)
                 .input ('D', Items.DIAMOND)
-                .input ('#', Items.AIR)
                 .criterion (hasItem (Items.DIAMOND), conditionsFromItem (Items.DIAMOND))
                 .criterion (hasItem (ModItems.COIN_AMALGAM), conditionsFromItem (ModItems.COIN_AMALGAM))
                 .offerTo (exporter, new Identifier (getRecipeName (ModItems.DIAMOND_PLANCHET)));
+
         ShapedRecipeJsonBuilder.create (RecipeCategory.MISC, ModItems.COPPER_PLANCHET, 1)
-                .pattern ("#C#")
+                .pattern (" C ")
                 .pattern ("CDC")
-                .pattern ("#C#")
+                .pattern (" C ")
                 .input ('C', ModItems.COIN_AMALGAM)
                 .input ('D', Items.COPPER_INGOT)
-                .input ('#', Items.AIR)
                 .criterion (hasItem (Items.COPPER_INGOT), conditionsFromItem (Items.COPPER_INGOT))
                 .criterion (hasItem (ModItems.COIN_AMALGAM), conditionsFromItem (ModItems.COIN_AMALGAM))
                 .offerTo (exporter, new Identifier (getRecipeName (ModItems.COPPER_PLANCHET)));
+
         ShapedRecipeJsonBuilder.create (RecipeCategory.MISC, ModItems.GOLD_PLANCHET, 1)
-                .pattern ("#C#")
+                .pattern (" C ")
                 .pattern ("CDC")
-                .pattern ("#C#")
+                .pattern (" C ")
                 .input ('C', ModItems.COIN_AMALGAM)
                 .input ('D', Items.GOLD_INGOT)
-                .input ('#', Items.AIR)
                 .criterion (hasItem (Items.GOLD_INGOT), conditionsFromItem (Items.GOLD_INGOT))
                 .criterion (hasItem (ModItems.COIN_AMALGAM), conditionsFromItem (ModItems.COIN_AMALGAM))
                 .offerTo (exporter, new Identifier (getRecipeName (ModItems.GOLD_PLANCHET)));
+
         ShapedRecipeJsonBuilder.create (RecipeCategory.MISC, ModItems.NICKEL_PLANCHET, 1)
-                .pattern ("#C#")
+                .pattern (" C ")
                 .pattern ("CDC")
-                .pattern ("#C#")
+                .pattern (" C ")
                 .input ('C', ModItems.COIN_AMALGAM)
                 .input ('D', ModItems.NICKEL_INGOT)
-                .input ('#', Items.AIR)
                 .criterion (hasItem (ModItems.NICKEL_INGOT), conditionsFromItem (ModItems.NICKEL_INGOT))
                 .criterion (hasItem (ModItems.COIN_AMALGAM), conditionsFromItem (ModItems.COIN_AMALGAM))
                 .offerTo (exporter, new Identifier (getRecipeName (ModItems.NICKEL_PLANCHET)));
+
         ShapedRecipeJsonBuilder.create (RecipeCategory.MISC, ModItems.ZINC_PLANCHET, 1)
-                .pattern ("#C#")
+                .pattern (" C ")
                 .pattern ("CDC")
-                .pattern ("#C#")
+                .pattern (" C ")
                 .input ('C', ModItems.COIN_AMALGAM)
                 .input ('D', ModItems.ZINC_INGOT)
-                .input ('#', Items.AIR)
                 .criterion (hasItem (ModItems.ZINC_INGOT), conditionsFromItem (ModItems.ZINC_INGOT))
                 .criterion (hasItem (ModItems.COIN_AMALGAM), conditionsFromItem (ModItems.COIN_AMALGAM))
                 .offerTo (exporter, new Identifier (getRecipeName (ModItems.ZINC_PLANCHET)));
