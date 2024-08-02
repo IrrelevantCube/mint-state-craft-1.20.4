@@ -42,6 +42,9 @@
 
   "itemgroup.mint_state_coins": "Mint State: Coins",
   "itemgroup.mint_state_nature": "Mint State: Nature",
+  "itemgroup.mint_state_machines": "Mint State: Machines",
+
+  "block.mintstate.the_crucible": "Crucible",
 
   "block.mintstate.zinc_ore": "Zinc Ore",
   "block.mintstate.deepslate_zinc_ore": "Deepslate Zinc Ore",

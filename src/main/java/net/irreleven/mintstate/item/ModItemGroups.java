@@ -77,6 +77,10 @@ public class ModItemGroups {
 
     }).build ());
 
+    public static final ItemGroup MINT_STATE_MACHINES = Registry.register (Registries.ITEM_GROUP, new Identifier (MintStateCraft.MOD_ID, "mint_state_machines"), FabricItemGroup.builder ().displayName (Text.translatable ("itemgroup.mint_state_machines")).icon (() -> new ItemStack (ModItems.NETHERITE_MASTER_DIE_NICKELGOLD)).entries ((displayContext, entries) -> {
+        entries.add (ModBlocks.THE_CRUCIBLE);
+    }).build ());
+
     public static void registerItemGroups() {
         MintStateCraft.LOGGER.info ("Registering Item Groups for " + MintStateCraft.MOD_ID);
     }

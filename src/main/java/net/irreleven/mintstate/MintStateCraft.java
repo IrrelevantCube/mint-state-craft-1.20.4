@@ -3,8 +3,10 @@ package net.irreleven.mintstate;
 import net.fabricmc.api.ModInitializer;
 
 import net.irreleven.mintstate.block.ModBlocks;
+import net.irreleven.mintstate.block.entity.ModBlockEntities;
 import net.irreleven.mintstate.item.ModItemGroups;
 import net.irreleven.mintstate.item.ModItems;
+import net.irreleven.mintstate.screen.ModScreenHandlers;
 import net.irreleven.mintstate.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +21,9 @@ public class MintStateCraft implements ModInitializer {
 		ModItems.registerModItems ();
 		ModWorldGeneration.generateModWorldGen ();
 
+		ModBlockEntities.registerBlockEntities ();
+
 		ModBlocks.registerModBlocks();
+		ModScreenHandlers.registerScreenHandlers ();
 	}
 }

@@ -1,0 +1,5 @@
+// 1.20.4	2024-08-01T20:57:55.1271694	Mint State Craft/World Gen
+3b13b86f2966e55385c468339746d585737e5f59 data\mintstate\worldgen\configured_feature\zinc_ore.json
+1e938d1c3bbdd5705a7dfef6c5fb506b74845b87 data\mintstate\worldgen\placed_feature\zinc_ore_placed.json
+66ce65e58b78ed3e5154cac13fabfad78534ebaf data\mintstate\worldgen\configured_feature\nickel_ore.json
+4fd892be2aa0144ef49cedb2c9d143c6fcefa509 data\mintstate\worldgen\placed_feature\nickel_ore_placed.json
