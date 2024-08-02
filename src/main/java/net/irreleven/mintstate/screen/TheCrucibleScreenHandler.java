@@ -29,11 +29,13 @@ public class TheCrucibleScreenHandler extends ScreenHandler {
     public TheCrucibleScreenHandler(int syncId, PlayerInventory playerInventory,
                                     BlockEntity blockEntity, PropertyDelegate arrayPropertyDelegate) {
         super (ModScreenHandlers.THE_CRUCIBLE_SCREEN_HANDLER, syncId);
-        checkSize ((Inventory) blockEntity, 2);
+        checkSize ((Inventory) blockEntity, 9);
         this.inventory = ((Inventory) blockEntity);
         inventory.onOpen (playerInventory.player);
         this.propertyDelegate = arrayPropertyDelegate;
         this.blockEntity = ((TheCrucibleBlockEntity) blockEntity);
+
+        this.addSlot (new Slot (inventory, 0, 12, 11));
 
         this.addSlot (new Slot (inventory, 1, 54, 11));
         this.addSlot (new Slot (inventory, 2, 80, 11));

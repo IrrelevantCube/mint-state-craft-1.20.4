@@ -6,6 +6,7 @@ import net.irreleven.mintstate.block.ModBlocks;
 import net.irreleven.mintstate.block.entity.ModBlockEntities;
 import net.irreleven.mintstate.item.ModItemGroups;
 import net.irreleven.mintstate.item.ModItems;
+import net.irreleven.mintstate.recipe.ModRecipes;
 import net.irreleven.mintstate.screen.ModScreenHandlers;
 import net.irreleven.mintstate.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
@@ -22,6 +23,8 @@ public class MintStateCraft implements ModInitializer {
 		ModWorldGeneration.generateModWorldGen ();
 
 		ModBlockEntities.registerBlockEntities ();
+
+		ModRecipes.registerRecipes ();
 
 		ModBlocks.registerModBlocks();
 		ModScreenHandlers.registerScreenHandlers ();

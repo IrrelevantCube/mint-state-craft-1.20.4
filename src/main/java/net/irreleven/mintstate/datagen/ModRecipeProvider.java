@@ -35,6 +35,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         offer2x2CompactingRecipe (exporter, RecipeCategory.MISC, ModItems.EMERALD_PLANCHET,  ModItems.COIN_AMALGAM);
 
+
         ShapedRecipeJsonBuilder.create (RecipeCategory.MISC, ModItems.DIAMOND_PLANCHET, 1)
                 .pattern (" C ")
                 .pattern ("CDC")

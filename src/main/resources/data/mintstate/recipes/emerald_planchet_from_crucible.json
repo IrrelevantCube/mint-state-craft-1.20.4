@@ -1,0 +1,14 @@
+{
+  "type": "mintstate:the_crucible",
+  "ingredients": [
+    {
+      "item": "mintstate:coin_amalgam",
+      "item": "minecraft:emerald",
+      "item": "minecraft:emerald"
+    }
+  ],
+  "output": {
+    "item": "emerald_planchet",
+    "count": 1
+  }
+}

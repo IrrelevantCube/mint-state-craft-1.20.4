@@ -1,31 +1,48 @@
 package net.irreleven.mintstate.block.entity;
 
+import com.google.common.collect.Maps;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.irreleven.mintstate.item.ModItems;
+import net.irreleven.mintstate.recipe.TheCrucibleRecipe;
 import net.irreleven.mintstate.screen.TheCrucibleScreenHandler;
+import net.minecraft.SharedConstants;
+import net.minecraft.block.AbstractFurnaceBlock;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
+import net.minecraft.inventory.Inventory;
+import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.recipe.RecipeEntry;
+import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
+import net.minecraft.util.Util;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+
+import java.util.Optional;
+
 public class TheCrucibleBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize (9, ItemStack.EMPTY);
-    private static final int INPUT_SLOT_1 = 0;
+    private static final int FUEL_SLOT_INDEX = 0;
     private static final int INPUT_SLOT_2 = 1;
     private static final int INPUT_SLOT_3 = 2;
     private static final int INPUT_SLOT_4 = 3;
@@ -34,6 +51,8 @@ public class TheCrucibleBlockEntity extends BlockEntity implements ExtendedScree
     private static final int OUTPUT_SLOT_3 = 6;
     private static final int OUTPUT_SLOT_4 = 7;
     private static final int OUTPUT_SLOT_5 = 8;
+
+
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
@@ -57,6 +76,7 @@ public class TheCrucibleBlockEntity extends BlockEntity implements ExtendedScree
                 switch (index) {
                     case 0 -> TheCrucibleBlockEntity.this.progress = value;
                     case 1 -> TheCrucibleBlockEntity.this.maxProgress = value;
+
                 }
             }
 
@@ -66,7 +86,6 @@ public class TheCrucibleBlockEntity extends BlockEntity implements ExtendedScree
             }
         };
     }
-
     @Override
     public void writeScreenOpeningData(ServerPlayerEntity player, PacketByteBuf buf) {
         buf.writeBlockPos (this.pos);
@@ -94,6 +113,7 @@ public class TheCrucibleBlockEntity extends BlockEntity implements ExtendedScree
         super.readNbt (nbt);
         Inventories.readNbt (nbt, inventory);
         progress = nbt.getInt ("the_crucible.progress");
+
     }
 
     @Nullable
@@ -102,9 +122,13 @@ public class TheCrucibleBlockEntity extends BlockEntity implements ExtendedScree
         return new TheCrucibleScreenHandler (syncId, playerInventory, this, this.propertyDelegate);
     }
 
+
     public void tick(World world, BlockPos pos, BlockState state) {
+
         if(world.isClient()) {
+
             return;
+
         }
 
         if(isOutputSlotEmptyOrRecievable()) {
@@ -132,10 +156,12 @@ public class TheCrucibleBlockEntity extends BlockEntity implements ExtendedScree
     }
 
     private void craftItem() {
-        this.removeStack (INPUT_SLOT_2 & INPUT_SLOT_3 & INPUT_SLOT_4,1);
-        ItemStack result = new ItemStack (ModItems.EMERALD_PLANCHET);
+        Optional<RecipeEntry<TheCrucibleRecipe>> recipe = getCurrentRecipe();
 
-        this.setStack (OUTPUT_SLOT_1, new ItemStack (result.getItem (), getStack (OUTPUT_SLOT_1).getCount () + result.getCount ()));
+        this.removeStack (FUEL_SLOT_INDEX & INPUT_SLOT_2 & INPUT_SLOT_3 & INPUT_SLOT_4,1);
+
+
+        this.setStack (OUTPUT_SLOT_1, new ItemStack (recipe.get ().value ().getResult (null).getItem (), getStack (OUTPUT_SLOT_1).getCount () + recipe.get ().value ().getResult (null).getCount ()));
     }
 
     private boolean hasCraftingFinished() {
@@ -147,12 +173,20 @@ public class TheCrucibleBlockEntity extends BlockEntity implements ExtendedScree
     }
 
     private boolean hasRecipe() {
-        ItemStack result = new ItemStack (ModItems.EMERALD_PLANCHET);
-        boolean hasInput = getStack (INPUT_SLOT_2).getItem () == ModItems.COIN_AMALGAM;
-        boolean hasInput1 = getStack (INPUT_SLOT_3).getItem () == Items.EMERALD;
-        boolean hasInput2 = getStack (INPUT_SLOT_4).getItem () == Items.EMERALD;
 
-        return hasInput & hasInput1 & hasInput2 && canInsertAmountIntoOutputSlot(result) && canInsertItemIntoOutputSlot(result.getItem ());
+        Optional<RecipeEntry<TheCrucibleRecipe>> recipe = getCurrentRecipe();
+
+        return recipe.isPresent () && canInsertAmountIntoOutputSlot(recipe.get ().value ().getResult (null))
+                && canInsertItemIntoOutputSlot(recipe.get ().value ().getResult (null).getItem ());
+    }
+
+    private Optional<RecipeEntry<TheCrucibleRecipe>> getCurrentRecipe() {
+        SimpleInventory inv = new SimpleInventory (this.size ());
+        for (int i = 0; i < this.size (); i++) {
+            inv.setStack (i, this.getStack (i));
+            
+        }
+        return getWorld ().getRecipeManager ().getFirstMatch (TheCrucibleRecipe.Type.INSTANCE, inv, getWorld ());
     }
 
     private boolean canInsertItemIntoOutputSlot(Item item) {

@@ -8,6 +8,9 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.Inventory;
+import net.minecraft.recipe.AbstractCookingRecipe;
+import net.minecraft.recipe.RecipeManager;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.util.ActionResult;
@@ -42,7 +45,6 @@ public class TheCrucibleBlock extends BlockWithEntity implements BlockEntityProv
     }
 
     @Nullable
-    @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
         return new TheCrucibleBlockEntity (pos, state);
     }
@@ -71,6 +73,7 @@ public class TheCrucibleBlock extends BlockWithEntity implements BlockEntityProv
 
         return ActionResult.SUCCESS;
     }
+
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
